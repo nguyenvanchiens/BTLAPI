@@ -1,0 +1,1 @@
+var current_url = "https://localhost:44350";//sang bên này config các thứ

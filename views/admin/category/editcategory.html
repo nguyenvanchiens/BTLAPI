@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADMIN </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script type="text/javascript" src="/ADMIN/lib/backend/ckeditor/ckeditor.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"> <!--linh dẫn đến fontawesome để lấy đường dẫn các icon-->
+        <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+        Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design">
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <!-- bootstrap-css -->
+        <link rel="stylesheet" href="/ADMIN/lib/backend/css/bootstrap.min.css">
+        <!-- //bootstrap-css -->
+        <!-- Custom CSS -->
+        <link href="/ADMIN/lib/backend/css/style.css" rel="stylesheet" type="text/css">
+        <link href="/ADMIN/lib/backend/css/style-responsive.css" rel="stylesheet">
+        <!-- font CSS -->
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+        <!-- font-awesome icons -->
+        <link rel="stylesheet" href="/ADMIN/lib/backend/css/font.css" type="text/css">
+        <script src="/ADMIN/lib/backend/js_api/logout.js"></script>
+        <link href="/ADMIN/lib/backend/css/font-awesome.css" rel="stylesheet"> 
+        <link rel="stylesheet" href="/ADMIN/lib/backend/css/morris.css" type="text/css">
+        <!-- calendar -->
+        <link rel="stylesheet" href="/ADMIN/lib/backend/css/monthly.css">
+        
+        <!-- //calendar -->
+        <!-- //font-awesome icons -->
+        <script src="/ADMIN/lib/backend/js/jquery2.0.3.min.js"></script>
+        <script src="/ADMIN/lib/backend/js/raphael-min.js"></script>
+        <script src="/ADMIN/lib/backend/js/morris.js"></script>
+        <script src="/ADMIN/lib/backend/js_api/angular.min.js"></script>
+        <script src="/ADMIN/lib/backend/js_api/global.js"></script>
+        <script src="/ADMIN/controller/category.js"></script>
+    </head>
+    <body cz-shortcut-listen="true" ng-app="AppAdmin" ng-controller="CategoryCtrl">
+        <section id="container">
+        <!--header start-->
+        <header class="header fixed-top clearfix">
+        <!--logo start-->
+        <div class="brand">
+            <a href="main.html" class="logo">
+                VISITORS
+            </a>
+            <div class="sidebar-toggle-box">
+                <div class="fa fa-bars"></div>
+            </div>
+        </div>
+        <!--logo end-->
+        <div class="nav notify-row" id="top_menu">
+            <!--  notification start -->
+           
+            <!--  notification end -->
+        </div>
+        <div class="top-nav clearfix">
+            <!--search & user info start-->
+            <ul class="nav pull-right top-menu">
+               
+                <!-- user login dropdown start-->
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <img alt="" src="images/2.png">
+                        <span class="username" id="user_name">chiến</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu extended logout">
+                        <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                        <li><a href="javascript:LogOut();"><i class="fa fa-key"></i> Log Out</a></li>
+                    </ul>
+                </li>
+                <!-- user login dropdown end -->
+               
+            </ul>
+            <!--search & user info end-->
+        </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse">
+                <!-- sidebar menu start-->     
+                <div class="leftside-navigation" tabindex="5000" style="overflow: hidden; outline: none;">
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <li>
+                            <a class="" href="main.html">
+                                <i class="fa fa-dashboard"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        
+                        <li class="sub-menu dcjq-parent-li">
+                            <a href="javascript:;" class="dcjq-parent">
+                                <i class="fa fa-book"></i>
+                                <span>Danh Sách</span>
+                            <span class="dcjq-icon"></span></a>
+                            <ul class="sub" style="display: none;">
+                                <li><a href="/views/admin/category/category.html"><i class="fas fa-apple-alt"></i> Danh sách loại sản phẩm</a></li>
+                                <li><a href="/views/admin/product/product.html"><i class="fas fa-asterisk"></i> Danh sách sản phẩm</a></li>
+                                <li><a href="/views/admin/user/user.html"><i class="fas fa-users"></i> Quản lý user</a></li>
+                                <li><a href="http://localhost/Fashion_shop/admin/slide"><i class="fas fa-users"></i> Slide</a></li>
+                                <li><a href="http://localhost/Fashion_shop/admin/setting"><i class="fas fa-hammer"></i> Setting</a></li>
+                                <li><a href="http://localhost/Fashion_shop/admin/order"><i class="fas fa-sort-amount-up-alt"></i> Order</a></li>
+                                 <li><a href="http://localhost/Fashion_shop/admin/footer"><i class="fas fa-sort-amount-up-alt"></i> Footer</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu dcjq-parent-li">
+                            <a href="javascript:;" class="dcjq-parent">
+                                <i class="fas fa-sort-amount-up-alt"></i>
+                                <span>Đơn hàng</span>
+                            <span class="dcjq-icon"></span></a>
+                            <ul class="sub" style="display: none;">
+                                <li><a href="/views/admin/order/Unconfirmedorder.html"><i class="fas fa-sort-amount-up-alt"></i>Đơn hàng chưa xác thực</a></li>
+                                <li><a href="/views/admin/order/ordersuccess.html"><i class="fas fa-check"></i>Danh sách đơn đã xử lý</a></li>
+                                <li><a href="http://localhost/Fashion_shop/admin/order/view_order_deleted"><i class="fas fa-ban"></i>Danh sách đơn hàng bị hủy</a></li>
+                                <li><a href="/views/admin/order/statistical.html"><i class="fab fa-buffer"></i>Thống kê doanh thu</a></li>
+                            </ul>
+                        </li>
+                    </ul>            
+                </div>
+                <!-- sidebar menu end-->
+            <div id="ascrail2000" class="nicescroll-rails" style="width: 3px; z-index: auto; cursor: default; position: absolute; top: 0px; left: 237px; height: 754px; display: none; opacity: 0;"><div style="position: relative; top: 0px; float: right; width: 3px; height: 0px; background-color: rgb(139, 92, 126); border: 0px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 0px;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails" style="height: 3px; z-index: auto; top: 751px; left: 0px; position: absolute; cursor: default; display: none; opacity: 0;"><div style="position: relative; top: 0px; height: 3px; width: 0px; background-color: rgb(139, 92, 126); border: 0px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 0px; left: 0px;"></div></div></div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="form-w3layouts">
+                    <!-- page start-->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    EDIT CATEGORY
+                                    <span class="tools pull-right">
+                                        <a class="fa fa-chevron-down" href="javascript:;"></a>
+                                        <a class="fa fa-cog" href="javascript:;"></a>
+                                        <a class="fa fa-times" href="javascript:;"></a>
+                                     </span>
+                                </header>
+                                <div class="panel-body">
+                                    <div class=" form" ng-init="loadDetailCategory()">
+                                        <form class="cmxform form-horizontal"ng-submit="UpdateCategory()"  id="commentForm" method="POST" novalidate="novalidate">
+                                            <input type="hidden" name="_token" value="vL9iILECDmFPI25viqhaBx3L9mD1u5yzuKelP3Yv">                                                                        <div class="form-group ">
+                                                <label for="cname" class="control-label col-lg-3">Name</label>
+                                                <div class="col-lg-6">
+                                                    <input class="form-control" ng-change="getslug()" ng-model="categoryDetail.name" id="name" name="name" minlength="2" type="text" required="">           
+                                                </div>
+                                            </div> 
+                                            <div class="form-group ">
+                                                <label for="cname" class="control-label col-lg-3">slug</label>
+                                                <div class="col-lg-6">
+                                                    <input class="form-control" ng-model="categoryDetail.slug" value="" id="slug" name="slug" minlength="2" type="text" required="">           
+                                                </div>
+                                            </div>                                                            
+                                             
+                                                                          
+                                            <div class="form-group">
+                                                <div class="col-lg-offset-3 col-lg-6">
+                                                    <button type="submit" class="btn btn-primary">Update</button>
+                                                    <a href="/views/admin/category/category.html" class="btn btn-default" type="button">Cancel</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+        
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- page end-->
+                </div>
+        </section>
+        
+        </section>
+        
+
+<script src="/ADMIN/lib/backend/js/bootstrap.js"></script>
+<script src="/ADMIN/lib/backend/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="/ADMIN/lib/backend/js/scripts.js"></script>
+<script src="/ADMIN/lib/backend/js/jquery.slimscroll.js"></script>
+<script src="/ADMIN/lib/backend/js/jquery.nicescroll.js"></script>
+<script src="/ADMIN/lib/backend/js_api/checklogin.js"></script>
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/ADMIN/lib/backend/js/flot-chart/excanvas.min.js"></script><![endif]-->
+<script src="/ADMIN/lib/backend/js/jquery.scrollTo.js"></script>
+
+<!-- morris JavaScript -->	
+<script>
+$(document).ready(function() {
+//BOX BUTTON SHOW AND CLOSE
+jQuery('.small-graph-box').hover(function() {
+  jQuery(this).find('.box-button').fadeIn('fast');
+}, function() {
+  jQuery(this).find('.box-button').fadeOut('fast');
+});
+jQuery('.small-graph-box .box-close').click(function() {
+  jQuery(this).closest('.small-graph-box').fadeOut(200);
+  return false;
+});
+
+//CHARTS
+function gd(year, day, month) {
+    return new Date(year, month - 1, day).getTime();
+}
+
+
+
+});
+</script>
+<!-- calendar -->
+<script type="text/javascript" src="/ADMIN/lib/backend/js/monthly.js"></script>
+<script type="text/javascript">
+$(window).load( function() {
+
+    $('#mycalendar').monthly({
+        mode: 'event',
+        
+    });
+
+    $('#mycalendar2').monthly({
+        mode: 'picker',
+        target: '#mytarget',
+        setWidth: '250px',
+        startHidden: true,
+        showTrigger: '#mytarget',
+        stylePast: true,
+        disablePast: true
+    });
+
+switch(window.location.protocol) {
+case 'http:':
+case 'https:':
+// running on a server, should be good.
+break;
+case 'file:':
+alert('Just a heads-up, events will not work when run locally.');
+}
+
+});
+</script>
+<script>
+    
+    !function ($) {
+        $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
+            $(this).find('em:first').toggleClass("glyphicon-minus");      
+        }); 
+        $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+    }(window.jQuery);
+
+    $(window).on('resize', function () {
+      if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+    })
+    $(window).on('resize', function () {
+      if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+    });
+    function changeImg(input){
+        //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
+        if(input.files && input.files[0]){
+            var reader = new FileReader();
+            //Sự kiện file đã được load vào website
+            reader.onload = function(e){
+                //Thay đổi đường dẫn ảnh
+                $('#avatar').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $(document).ready(function() {
+        $('#avatar').click(function(){
+            $('#img').click();
+        });
+    });
+</script>	
+
+<!-- //calendar -->
+
+</section></body>
+</html>
